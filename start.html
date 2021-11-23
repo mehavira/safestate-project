@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeState - Start</title>
+    <link rel="stylesheet" href="start.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,700" rel="stylesheet">
+    <script>
+        function submitData() {
+            let input = document.forms['zipform']['zipinpt'].value;
+            if (input == ''){
+                document.getElementById('errormsg').style.display = 'block';
+                return false;
+            }
+            document.getElementById('nextbutton').href = 'http://localhost:3500/stats/?zipcode='+input;
+        }
+    </script>
+
+</head>
+<body>
+        <section id='navbarsection'>
+            <div>
+                <nav id='navbar'>
+                    <ul>
+                        <li><a href='home.html'>SAFESTATE</a></li>
+                        <li><a href='start.html'>CRIME DATA</a></li>
+                        <li><a href='home.html#step1'>TUTORIAL</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        
+        <form id='zipform'>
+            <label id='zipprompt' for='zipprompt'>Enter a zip code (must be within Oregon).</label><br>
+            <input id='location' name='zipinpt' type='text'>
+            <p id='errormsg'>Error: input cannot be left blank.</p>    
+            <div id='next'><a id='nextbutton' onclick='return submitData()'>Submit</a></div>      
+        </form>
+
+        <section id='footer'>
+            <div>
+                <p>
+                    Have questions or comments? Email us at 
+                    <a id='email' href='mailto: help@safestate.com'>help@safestate.com</a> 
+                    or call 
+                    <a id='phone' href='tel: 555-555-5555'>555-555-5555</a>
+                </p>
+            </div>
+        </section>
+    
+</body>
+</html>
