@@ -1,0 +1,73 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    height: auto;
+    max-width: 100%;
+
+}
+#header {
+    font-size: 40px;
+    text-align: center;
+}
+#info_head {
+    font-size: 35px;
+}
+
+#sights_head, #agencies_head {
+    font-size: 25px;
+}
+
+.sightsdiv, .agencydiv, body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#info {
+    text-align: center;
+}
+
+canvas {
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+#mapsbutton a {
+    Font-Family: 'Roboto', Sans-Serif;
+    Font-Size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #409fbf;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight:300;
+    color:black;
+    text-align:center;
+    transition: all 0.2s;
+    border-radius: 25px;
+}
+
+#mapsbutton a:hover {
+    color:white;
+    background-color: #409fbf;
+
+}
+
+
+#footer {
+    background-color: rgb(15, 15, 15);
+    bottom: 0;
+    width: 100%;
+}
+
+#footer * {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 8vh;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#footer div{
+    padding: 3px 0;
+}

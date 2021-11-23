@@ -1,0 +1,180 @@
+<link rel="stylesheet" type='text/css' href="/css/stats1.css">
+
+<p id='header'>Viewing crime statistics for {{locationMeasure}}</p>
+
+<canvas id="myChart1" style="height:45vh; width:80vw"></canvas>
+<canvas id="myChart2" style="height:45vh; width:80vw"></canvas>
+<canvas id="myChart3" style="height:45vh; width:80vw"></canvas>
+<canvas id="myChart4" style="height:45vh; width:80vw"></canvas>
+
+<script>
+const ctx1 = document.getElementById('myChart1').getContext('2d');
+
+const myChart1 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: [
+          {{#each mvTheftDates}}
+            "{{this}}".slice(0,4)+'\''+"{{this}}".slice(4,6),
+          {{/each}}
+        ],
+        datasets: [{
+            label: 'Motor Vehicle Thefts by Month',
+            data: [{{mvTheftOffenses}}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)'
+
+            ],
+            borderColor: [
+
+                'rgba(255, 99, 132, 1)'
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 800
+            }
+        }
+    }
+});
+const ctx2 = document.getElementById('myChart2').getContext('2d');
+const myChart2 = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: [
+          {{#each robberyDates}}
+            "{{this}}".slice(0,4)+'\''+"{{this}}".slice(4,6),
+          {{/each}}
+        ],
+        datasets: [{
+            label: 'Robberies by Month',
+            data: [{{robberyOffenses}}],
+            backgroundColor: [
+
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+
+
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 800
+            }
+        }
+    }
+});
+const ctx3 = document.getElementById('myChart3').getContext('2d');
+const myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+      labels: [
+          {{#each wlvDates}}
+            "{{this}}".slice(0,4)+'\''+"{{this}}".slice(4,6),
+          {{/each}}
+        ],
+        datasets: [{
+            label: 'Weapon Law Violations by Month',
+            data: [{{wlvOffenses}}],
+            backgroundColor: [
+
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+
+
+                'rgba(255, 206, 86, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 800
+            }
+        }
+    }
+});
+const ctx4 = document.getElementById('myChart4').getContext('2d');
+const myChart4 = new Chart(ctx4, {
+    type: 'bar',
+    data: {
+        labels: [
+            {{#each assaultDates}}
+            "{{this}}".slice(0,4)+'\''+"{{this}}".slice(4,6),
+            {{/each}}
+          ],
+        datasets: [{
+            label: 'Simple Assaults by Month',
+            data: [{{assaultOffenses}}],
+            backgroundColor: [
+                'rgba(75, 192, 192, 0.2)'
+            ],
+            borderColor: [
+
+                'rgba(75, 192, 192, 1)'
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                suggestedMax: 800
+            }
+        }
+    }
+});
+
+</script>
+
+<div id='info'>
+    <p id='info_head'>Information about your location</p>
+    <div id='sightscontainer'>
+    <p id='sights_head'>Places to visit near this area:</p>
+{{#each sightsResults}}
+            <p class='sightsdiv'>{{this}}</p>
+{{/each}}   
+        <div class='buttons' id='mapsbutton' style={{mapDivStyle}}>
+            <a href={{sightsLink}}>
+            View locations in Google Maps (takes you to a new tab)
+            </a>
+        </div>
+    </div>
+
+    <div id='agenciescontainer' style='display:block'>
+        <p id='agencies_head'>Law enforcement agencies you can contact:</p>
+        {{#each lawAgencies}}
+            <p class='agencydiv'>{{this}}</p>
+        {{/each}}
+    </div>
+
+
+</div>
+
+<section id='footer'>
+    <div>
+        <p>
+            Have questions or comments? Email us at 
+            <a id='email' href="mailto: help@safestate.com">
+                help@safestate.com
+            </a> or call 
+            <a id='phone' href="tel: 555-555-5555">555-555-5555</a>
+            </p>
+    </div>
+</section>
