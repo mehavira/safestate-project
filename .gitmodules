@@ -1,3 +1,0 @@
-[submodule "crime-stats-service/crime_stats_api"]
-	path = crime-stats-service/crime_stats_api
-	url = https://github.com/mehavira/safestate.git
