@@ -1,0 +1,95 @@
+body {
+  background-color: #adb5bd;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #fdd85d;
+}
+
+h1{
+  color: #10b6e9;
+  font-size: 50px;
+}
+
+.App-header h2 {
+  font-size: calc(9px + 2vmin);;
+}
+
+.Anchor {
+  color: white;
+  text-decoration:none;
+}
+
+.Anchor:hover{
+  color: tomato;
+  text-decoration: underline;
+}
+
+.Button {
+  background-color: #adb5bd;
+  left: 20px;
+  position:relative;
+}
+
+td, th {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 8px;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+  color: #93E9BE;
+}
+
+tr:hover {background-color: #ddd;}
+tr{
+  color: white;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #93E9BE;
+  color: white;
+}
+
+.responsive {
+  width: 100%;
+  max-height: 430px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.Intro {
+  color:#93E9BE;
+  font-size: 70%;
+}
+
+.NewSearch {
+  width: 90px;
+  height: 40px;
+  left: 20px;
+  position:relative;
+}
+
+.homeAnchor {
+  color: #93E9BE;
+  text-decoration:none;
+}
+
+
+.homeAnchor:hover {
+  color: tomato;
+  text-decoration: underline;
+}
