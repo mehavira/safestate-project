@@ -1,53 +1,36 @@
-body {
-    overflow-x: hidden;
-    margin: 0;
-    height: auto;
-    max-width: 100%;
-
-}
-#header {
-    font-size: 40px;
-    text-align: center;
-}
-#info_head {
-    font-size: 35px;
-}
-
-#sights_head, #agencies_head {
-    font-size: 25px;
-}
-
-.sightsdiv, .agencydiv, body {
+#error_msg {
     font-family: 'Roboto', sans-serif;
-}
-
-#info {
-    text-align: center;
-}
-
-canvas {
+    font-size: 50px;
     margin-left: 5vh;
-    margin-right: 5vh;
 }
 
-#mapsbutton a {
+#infoerror_msg {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-left: 5vh;
+}
+
+#backbutton a{
     Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 16px;
+    Font-Size: 22px;
     cursor: pointer;
     display: inline-block;
     padding: 0.35em 1.2em;
     border: 0.1em solid #409fbf;
-    border-radius:0.12em;
+    margin: 0 0.3em 0.3em 0;
+    /*border-radius:0.12em;*/
     box-sizing: border-box;
     text-decoration: none;
     font-weight:300;
     color:black;
     text-align:center;
     transition: all 0.2s;
+    margin-top: 30px;
     border-radius: 25px;
-}
+    margin-left: 5vh;
 
-#mapsbutton a:hover {
+}
+#backbutton a:hover {
     color:white;
     background-color: #409fbf;
 
@@ -56,8 +39,10 @@ canvas {
 
 #footer {
     background-color: rgb(15, 15, 15);
+    position: fixed;
     bottom: 0;
     width: 100%;
+
 }
 
 #footer * {
