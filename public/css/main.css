@@ -14,7 +14,7 @@ li {
 li a{
     text-decoration: none;
     padding: 0.2vw;
-    Font-Family: 'Roboto', Sans-Serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 21px;
     color: white;
 }
@@ -30,7 +30,7 @@ ul {
     display: flex;
 }
 
-#navportion {
+#nav_portion {
     background-color: rgb(15, 15, 15);
     height: 8vh;
     margin: 0;

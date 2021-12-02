@@ -2,13 +2,13 @@
 
 <p id='header'>Viewing crime statistics for {{locationMeasure}}</p>
 
-<canvas id="myChart1" style="height:45vh; width:80vw"></canvas>
-<canvas id="myChart2" style="height:45vh; width:80vw"></canvas>
-<canvas id="myChart3" style="height:45vh; width:80vw"></canvas>
-<canvas id="myChart4" style="height:45vh; width:80vw"></canvas>
+<canvas id="mv_thefts_chart" style="height:45vh; width:80vw"></canvas>
+<canvas id="robberies_chart" style="height:45vh; width:80vw"></canvas>
+<canvas id="wlvs_chart" style="height:45vh; width:80vw"></canvas>
+<canvas id="simple_assaults_chart" style="height:45vh; width:80vw"></canvas>
 
 <script>
-const ctx1 = document.getElementById('myChart1').getContext('2d');
+const ctx1 = document.getElementById('mv_thefts_chart').getContext('2d');
 
 const myChart1 = new Chart(ctx1, {
     type: 'bar',
@@ -42,7 +42,7 @@ const myChart1 = new Chart(ctx1, {
         }
     }
 });
-const ctx2 = document.getElementById('myChart2').getContext('2d');
+const ctx2 = document.getElementById('robberies_chart').getContext('2d');
 const myChart2 = new Chart(ctx2, {
     type: 'bar',
     data: {
@@ -75,7 +75,7 @@ const myChart2 = new Chart(ctx2, {
         }
     }
 });
-const ctx3 = document.getElementById('myChart3').getContext('2d');
+const ctx3 = document.getElementById('wlvs_chart').getContext('2d');
 const myChart3 = new Chart(ctx3, {
     type: 'bar',
     data: {
@@ -108,7 +108,7 @@ const myChart3 = new Chart(ctx3, {
         }
     }
 });
-const ctx4 = document.getElementById('myChart4').getContext('2d');
+const ctx4 = document.getElementById('simple_assaults_chart').getContext('2d');
 const myChart4 = new Chart(ctx4, {
     type: 'bar',
     data: {
@@ -144,23 +144,23 @@ const myChart4 = new Chart(ctx4, {
 </script>
 
 <div id='info'>
-    <p id='infoHead'>Information about your location</p>
-    <div id="sightsContainer">
-    <p id='sightsHead'>Places to visit near this area:</p>
+    <p id='info_head'>Information about your location</p>
+    <div id="sights_container">
+    <p id='sights_head'>Places to visit near this area:</p>
 {{#each sightsResults}}
-            <p class='sightsDiv'>{{this}}</p>
+            <p class='sights_div'>{{this}}</p>
 {{/each}}   
-        <div class='buttons' id="mapsButton" style={{mapDivStyle}}>
+        <div class='buttons' id="maps_button" style={{mapDivStyle}}>
             <a href={{sightsLink}}>
             View locations in Google Maps (takes you to a new tab)
             </a>
         </div>
     </div>
 
-    <div id="agenciesContainer" style='display:block'>
-        <p id='agenciesHead'>Law enforcement agencies you can contact:</p>
+    <div id="agencies_container" style='display:block'>
+        <p id='agencies_head'>Law enforcement agencies you can contact:</p>
         {{#each lawAgencies}}
-            <p class='agencyDiv'>{{this}}</p>
+            <p class='agency_div'>{{this}}</p>
         {{/each}}
     </div>
 

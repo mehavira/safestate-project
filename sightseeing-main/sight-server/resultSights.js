@@ -43,7 +43,8 @@ router.post('/sight-ideas', function (req, res) {
                 // console.log("superagent 1")
                 result = JSON.parse(result.text).results[0];
                 superagent
-                    .get(`${URL_PLACES}?location=${result.geometry.location.lat}%2C${result.geometry.location.lng}&radius=5000&type=tourist_attraction&key=${API_KEY}`)
+                    .get(`${URL_PLACES}?location=${result.geometry.location.lat}%2C${result.geometry.location.lng}`+
+                        `&radius=5000&type=tourist_attraction&key=${API_KEY}`)
                     .end(function (err, results) {
                         // console.log('superagent 2')
                         if (err) {

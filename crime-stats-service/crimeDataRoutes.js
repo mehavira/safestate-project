@@ -63,7 +63,10 @@ app.get('/api/crimerates/', (req, res) => {
         conn.query(sql, (err, results) => {
           if (err) throw err;
           countyName = results[0].county;
-        let sql = 'SELECT nibrs_crime_desc, incident_date, distinct_offenses FROM agency_raw_crime_data WHERE county = "'+countyName+'" AND (nibrs_crime_desc = "Motor Vehicle Theft" OR nibrs_crime_desc = "Robbery" OR nibrs_crime_desc = "Weapon Law Violations" OR nibrs_crime_desc = "Simple Assault")';
+        let sql = 'SELECT nibrs_crime_desc, incident_date, distinct_offenses FROM agency_raw_crime_data '+
+            'WHERE county = "'+countyName+
+            '" AND (nibrs_crime_desc = "Motor Vehicle Theft" OR nibrs_crime_desc = "Robbery" OR '+
+            'nibrs_crime_desc = "Weapon Law Violations" OR nibrs_crime_desc = "Simple Assault")';
       conn.query(sql, (err, results) => {
       let crime;
       if (err) throw err;

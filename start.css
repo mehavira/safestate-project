@@ -30,7 +30,7 @@ ul {
     display: flex;
 }
 
-#navbarsection {
+#nav_bar_section {
     background-color: rgb(15, 15, 15);
     height: 8vh;
 }
@@ -50,11 +50,11 @@ label {
 
 }
 
-#next, #zipform{
+#next, #zip_form{
     text-align: center;
 }
 
-#zipform {
+#zip_form {
     margin-top: 120px;
 }
 
@@ -70,7 +70,7 @@ label {
 
 }
 
-#errormsg {
+#error_msg {
     display: none;
     color: red;
     font-family: 'Roboto', sans-serif;

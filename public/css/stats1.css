@@ -9,15 +9,15 @@ body {
     font-size: 40px;
     text-align: center;
 }
-#infoHead {
+#info_head {
     font-size: 35px;
 }
 
-#sightsHead, #agenciesHead {
+#sights_head, #agencies_head {
     font-size: 25px;
 }
 
-.sightsDiv, .agencyDiv, body {
+.sights_div, .agency_div, body {
     font-family: 'Roboto', sans-serif;
 }
 

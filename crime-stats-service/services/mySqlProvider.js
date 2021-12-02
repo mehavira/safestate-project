@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 function mysqlBaseQuery(sql, callBackFunction) {
     const conn = mysql.createConnection({
-        host: 'localhost',
-        user: 'new_user',
+        host: 'localhost',
+        user: 'new_user',
         password: 'password',
-        database: 'agency_locations_schema',
+        database: 'agency_locations_schema',
       });
       // connect to database
       conn.connect((err) =>{
-        if(err) throw err;
+      if(err) throw err;
       });
       const promiseQuery = new Promise(function(resolve, reject){
         conn.query(sql, (err, results) => {

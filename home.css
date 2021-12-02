@@ -33,34 +33,34 @@ ul {
 }
 /*style nav bar end*/
 
-#downarrow {
+#down_arrow {
     color: white;
     font-size: 5vh;
     text-align: center;
 }
 
-#webappdesc {
+#web_app_desc {
     font-family: 'Roboto', sans-serif;
     font-size: 28px;
 }
 
-#webappname {
+#web_app_name {
     display:none;
 }
 
-#webappname, #title{
+#web_app_name, #title{
     font-family: 'Roboto', sans-serif;
     font-size: 90px;
     text-decoration: none;
 }
 
-#examplestats {
+#example_stats {
     border-radius: 25px;
     float: right;
     width: 50%;
 }
 
-#title, #titledesc {
+#title, #title_desc {
     text-align: left;
     margin-bottom: 3px;
     color: white;
@@ -68,7 +68,7 @@ ul {
 
 }
 
-#titledesc {
+#title_desc {
     margin-left: 5vh;
 }
 
@@ -78,19 +78,19 @@ ul {
     transform: translate(-50%, -50%);
 }
 
-.topportion {
+.top_portion {
     background-color: rgb(15, 15, 15);
     height: 100vh;
 }
-#webappdesc {
+#web_app_desc {
     margin-top: 90px;
 }
 
-#startbutton {
+#start_button {
     margin-top:100px;
 }
 
-#startbutton a, #tutorialbutton a {
+#start_button a, #tutorial_button a {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     cursor: pointer;
@@ -107,17 +107,17 @@ ul {
     margin: 0 0.3em 0.3em 5vh;
 }
 
-#startbutton a:hover, #tutorialbutton a:hover {
+#start_button a:hover, #tutorial_button a:hover {
     color:white;
     background-color: #409fbf;
 
 }
 
-.step1img {
+.step1_img {
     float:right;
 }
 
-.steptitle, img {
+.step_title, img {
     font-family: 'Roboto', sans-serif;
     font-size: 25px;
     padding: 0;

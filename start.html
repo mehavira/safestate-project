@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,700" rel="stylesheet">
     <script>
         function submitData() {
-            let input = document.forms['zipform']['zipinpt'].value;
+            let input = document.forms['zip_form']['zip_input'].value;
             if (input === ''){
-                document.getElementById('errormsg').style.display = 'block';
+                document.getElementById('error_msg').style.display = 'block';
                 return false;
             }
-            document.getElementById('nextbutton').href = 'http://localhost:3500/stats/?zipcode='+input;
+            document.getElementById('next_button').href = 'http://localhost:3500/stats/?zipcode='+input;
         }
     </script>
 
 </head>
 <body>
-        <section id='navbarsection'>
+        <section id='nav_bar_section'>
             <div>
-                <nav id='navbar'>
+                <nav id="nav_bar">
                     <ul>
                         <li><a href='home.html'>SAFESTATE</a></li>
                         <li><a href='start.html'>CRIME DATA</a></li>
@@ -33,11 +33,11 @@
             </div>
         </section>
         
-        <form id='zipform'>
-            <label id='zipprompt' for='zipprompt'>Enter a zip code (must be within Oregon).</label><br>
-            <input id='location' name='zipinpt' type='text'>
-            <p id='errormsg'>Error: input cannot be left blank.</p>    
-            <div id='next'><a id='nextbutton' onclick='return submitData()'>Submit</a></div>      
+        <form id='zip_form'>
+            <label id="zip_prompt" for='zip_prompt'>Enter a zip code (must be within Oregon).</label><br>
+            <input id='location' name="zip_input" type='text'>
+            <p id='error_msg'>Error: input cannot be left blank.</p>
+            <div id='next'><a id="next_button" onclick='return submitData()'>Submit</a></div>
         </form>
 
         <section id='footer'>
