@@ -11,7 +11,7 @@
     <script>
         function submitData() {
             let input = document.forms['zipform']['zipinpt'].value;
-            if (input == ''){
+            if (input === ''){
                 document.getElementById('errormsg').style.display = 'block';
                 return false;
             }

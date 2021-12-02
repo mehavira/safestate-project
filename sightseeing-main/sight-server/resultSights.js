@@ -30,7 +30,7 @@ router.post('/sight-ideas', function (req, res) {
     let sql = 'SELECT zip FROM zipcode_to_county WHERE zip='+zipCode;
     conn.query(sql, (err, results) => {
         if(err) throw err;
-        if(results.length == 0){
+        if(results.length === 0){
             res.json({
                 error: 'Invalid zip code'
             });
@@ -69,7 +69,7 @@ router.post('/sight-ideas', function (req, res) {
                         }
                     });
             })
-    };
+    }
 
     });
 });
