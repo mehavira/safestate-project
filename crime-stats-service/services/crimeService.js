@@ -1,6 +1,6 @@
 
 const { connect } = require('http2');
-var base = require('./mysqlProvider');
+var base = require('./mySqlProvider');
 function getAllCounties(){
     const counties = ["Linn", "Jackson", "Clatsop", "Marion", "Baker", "Coos", "WASHINGTON",
     "Deschutes", "BENTON", "Morrow", "Curry", "Harney", "Clackamas", "Yamhill",
@@ -56,10 +56,10 @@ function getIncidentsFromCounty(countyName){
         result.forEach(element => {
           var updated_date = new Date(element.incident_date.toString()).toLocaleDateString('en-US').replace(/\//g, "-");
           var split_date = updated_date.split('-');
-          if (split_date[0].length == 1){
+          if (split_date[0].length === 1){
             split_date[0] = '0'+split_date[0];
           }
-          if (split_date[1].length == 1){
+          if (split_date[1].length === 1){
             split_date[1] = '0'+split_date[1];
           }
           updated_date = split_date[0]+'-'+split_date[1]+'-'+split_date[2];

@@ -9,15 +9,15 @@ body {
     font-size: 40px;
     text-align: center;
 }
-#info_head {
+#infoHead {
     font-size: 35px;
 }
 
-#sights_head, #agencies_head {
+#sightsHead, #agenciesHead {
     font-size: 25px;
 }
 
-.sightsdiv, .agencydiv, body {
+.sightsDiv, .agencyDiv, body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -31,8 +31,8 @@ canvas {
 }
 
 #mapsbutton a {
-    Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     cursor: pointer;
     display: inline-block;
     padding: 0.35em 1.2em;

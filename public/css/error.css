@@ -9,26 +9,24 @@
     font-size: 30px;
     margin-left: 5vh;
 }
-
 #backbutton a{
-    Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 22px;
+    margin: 30px 0.3em 0.3em 5vh;
+}
+
+#backbutton a, #next a{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
     cursor: pointer;
     display: inline-block;
     padding: 0.35em 1.2em;
     border: 0.1em solid #409fbf;
-    margin: 0 0.3em 0.3em 0;
-    /*border-radius:0.12em;*/
     box-sizing: border-box;
     text-decoration: none;
     font-weight:300;
     color:black;
     text-align:center;
     transition: all 0.2s;
-    margin-top: 30px;
     border-radius: 25px;
-    margin-left: 5vh;
-
 }
 #backbutton a:hover {
     color:white;

@@ -9,15 +9,14 @@ body {
 li {
     list-style-type: none;
     cursor: pointer;
-    margin: 0 2vw;
     font-size: 3vh;
-    margin-top: 3vh;
+    margin: 3vh 2vw 0;
 }
 
 li a{
     text-decoration: none;
     padding: 0.2vw;
-    Font-Family: 'Roboto', Sans-Serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 21px;
     color: white;
 }
@@ -41,8 +40,8 @@ ul {
 }
 
 #webappdesc {
-    Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 28px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
 }
 
 #webappname {
@@ -50,8 +49,8 @@ ul {
 }
 
 #webappname, #title{
-    Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 90px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 90px;
     text-decoration: none;
 }
 
@@ -92,14 +91,12 @@ ul {
 }
 
 #startbutton a, #tutorialbutton a {
-    Font-Family: 'Roboto', Sans-Serif;
-    Font-Size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
     cursor: pointer;
     display: inline-block;
     padding: 0.35em 1.2em;
     border: 0.1em solid #409fbf;
-    margin: 0 0.3em 0.3em 0;
-    border-radius:0.12em;
     box-sizing: border-box;
     text-decoration: none;
     font-weight:300;
@@ -107,7 +104,7 @@ ul {
     text-align:center;
     transition: all 0.2s;
     border-radius: 25px;
-    margin-left: 5vh;
+    margin: 0 0.3em 0.3em 5vh;
 }
 
 #startbutton a:hover, #tutorialbutton a:hover {
@@ -117,7 +114,6 @@ ul {
 }
 
 .step1img {
-    align-items: right;
     float:right;
 }
 

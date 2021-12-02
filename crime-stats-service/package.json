@@ -2,11 +2,11 @@
   "name": "nodejs_express_mysql",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "crimeDataRoutes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js",
-    "start": "node index.js"
+    "dev": "nodemon crimeDataRoutes.js",
+    "start": "node crimeDataRoutes.js"
   },
   "author": "",
   "license": "ISC",

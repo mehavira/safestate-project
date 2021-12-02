@@ -8,10 +8,10 @@ const URL_ZIP = 'https://maps.googleapis.com/maps/api/geocode/json';
 const URL_PLACES = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 
 const conn = mysql.createConnection({
-      host: 'localhost',
-      user: 'new_user',
-      password: 'password',
-      database: 'agency_locations_schema', 
+    host: 'localhost',
+    user: 'new_user',
+    password: 'password',
+    database: 'agency_locations_schema',
       
     });
 

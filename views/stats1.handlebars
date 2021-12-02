@@ -144,23 +144,23 @@ const myChart4 = new Chart(ctx4, {
 </script>
 
 <div id='info'>
-    <p id='info_head'>Information about your location</p>
-    <div id='sightscontainer'>
-    <p id='sights_head'>Places to visit near this area:</p>
+    <p id='infoHead'>Information about your location</p>
+    <div id="sightsContainer">
+    <p id='sightsHead'>Places to visit near this area:</p>
 {{#each sightsResults}}
-            <p class='sightsdiv'>{{this}}</p>
+            <p class='sightsDiv'>{{this}}</p>
 {{/each}}   
-        <div class='buttons' id='mapsbutton' style={{mapDivStyle}}>
+        <div class='buttons' id="mapsButton" style={{mapDivStyle}}>
             <a href={{sightsLink}}>
             View locations in Google Maps (takes you to a new tab)
             </a>
         </div>
     </div>
 
-    <div id='agenciescontainer' style='display:block'>
-        <p id='agencies_head'>Law enforcement agencies you can contact:</p>
+    <div id="agenciesContainer" style='display:block'>
+        <p id='agenciesHead'>Law enforcement agencies you can contact:</p>
         {{#each lawAgencies}}
-            <p class='agencydiv'>{{this}}</p>
+            <p class='agencyDiv'>{{this}}</p>
         {{/each}}
     </div>
 
