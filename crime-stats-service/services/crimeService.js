@@ -53,20 +53,20 @@ function getIncidentsFromCounty(countyName){
             "Simple Assault": []};
         let dates = {};
         result.forEach(element => {
-            let updated_date = new Date(element.incident_date.toString())
+            let updatedDate = new Date(element.incident_date.toString())
                 .toLocaleDateString('en-US').replace(/\//g, "-");
-            let split_date = updated_date.split('-');
-            if (split_date[0].length === 1){
-            split_date[0] = '0'+split_date[0];
+            let splitDate = updatedDate.split('-');
+            if (splitDate[0].length === 1){
+            splitDate[0] = '0'+splitDate[0];
           }
-          if (split_date[1].length === 1){
-            split_date[1] = '0'+split_date[1];
+          if (splitDate[1].length === 1){
+            splitDate[1] = '0'+splitDate[1];
           }
-          updated_date = split_date[0]+'-'+split_date[1]+'-'+split_date[2];
-          if (!moment(updated_date).format('MMM YY') in dates){
-            dates[moment(updated_date).format('MMM YY')] = element.distinct_offenses;
+          updatedDate = splitDate[0]+'-'+splitDate[1]+'-'+splitDate[2];
+          if (!moment(updatedDate).format('MMM YY') in dates){
+            dates[moment(updatedDate).format('MMM YY')] = element.distinct_offenses;
           }
-          else {dates[moment(updated_date).format('MMM YY')] += element.distinct_offenses}
+          else {dates[moment(updatedDate).format('MMM YY')] += element.distinct_offenses}
           data[element.nibrs_crime_desc]
               .push({"incident_date":element.incident_date,
                   "distinct_offenses":element.distinct_offenses});

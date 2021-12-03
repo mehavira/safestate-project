@@ -47,18 +47,18 @@ app.get('/stats/', function(req, res){
                     axios.get('http://localhost:2000/api/crimeincidents/?zipcode='+zipCode)
                     .then(response => {
                         let data = response.data;
-                        context['mvThefts'] = data['Motor Vehicle Theft']; 
-                        context['robberies'] = data['Robbery'];
-                        context['wlvs'] = data['Weapon Law Violations'];
-                        context['assaults'] = data['Simple Assault'];
+                        context.mvThefts = data['Motor Vehicle Theft'];
+                        context.robberies = data['Robbery'];
+                        context.wlvs = data['Weapon Law Violations'];
+                        context.assaults = data['Simple Assault'];
                         context.mvTheftDates = Object.keys(data['Motor Vehicle Theft']);
-                        context['mvTheftOffenses'] = Object.values(data['Motor Vehicle Theft']);
-                        context['robberyDates'] = Object.keys(data['Robbery']);
-                        context['robberyOffenses'] = Object.values(data['Robbery']);
-                        context['wlvDates'] = Object.keys(data['Weapon Law Violations']);
-                        context['wlvOffenses'] = Object.values(data['Weapon Law Violations']);
-                        context['assaultDates'] = Object.keys(data['Simple Assault']);
-                        context['assaultOffenses'] = Object.values(data['Simple Assault']);
+                        context.mvTheftOffenses = Object.values(data['Motor Vehicle Theft']);
+                        context.robberyDates = Object.keys(data['Robbery']);
+                        context.robberyOffenses = Object.values(data['Robbery']);
+                        context.wlvDates = Object.keys(data['Weapon Law Violations']);
+                        context.wlvOffenses = Object.values(data['Weapon Law Violations']);
+                        context.assaultDates = Object.keys(data['Simple Assault']);
+                        context.assaultOffenses = Object.values(data['Simple Assault']);
 
                         const info = { 'zipCode': parseInt(zipCode) };
                         axios.post('http://localhost:8222/sight-ideas/', info)
@@ -113,7 +113,7 @@ app.get('/stats/', function(req, res){
 });
 
 app.get('/getsights/', (req, res) => {
-    ////CONVERTING THE INPUT TO ZIP CODE
+    // converting the input to a number
     const input = req.query.input;
     let modInput = parseFloat(input);
     let context = {};
@@ -213,7 +213,7 @@ app.get('/nearbyagencies', (req, res) => {
                         else if(element['agency_name'].indexOf('SO') > -1){
                             const soReplace = "Sheriff's Office";
                             element.agency_name = element.agency_name.replace('SO', soReplace);
-                        }   
+                        }
                             agencies.push(element.agency_name);
                     });
                     res.send(agencies);
