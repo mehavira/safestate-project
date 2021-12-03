@@ -8,7 +8,7 @@ const crimeService = require('./services/crimeService');
 
 // parse application/json
 app.use(bodyParser.json());
-// create database connection
+
 const conn = mysql.createConnection({
   host: 'localhost',
   user: 'new_user',
