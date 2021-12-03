@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SafeState - Start</title>
     <link rel="stylesheet" href="start.css">
-    <link rel="stylesheet" href="public/css/error.css">
     <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:400,700" rel="stylesheet">
     <script>
         function submitData() {
-            let input = document.forms['zip_form']['zip_input'].value;
+            let input = document.forms['zip_form']['zip_inpt'].value;
             if (input === ''){
                 document.getElementById('error_msg').style.display = 'block';
                 return false;
@@ -22,35 +21,33 @@
 
 </head>
 <body>
-        <section id='nav_bar_section'>
-            <div>
-                <nav id="nav_bar">
-                    <ul>
-                        <li><a href='home.html'>SAFESTATE</a></li>
-                        <li><a href='start.html'>CRIME DATA</a></li>
-                        <li><a href='home.html#step1'>TUTORIAL</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-        
-        <form id='zip_form'>
-            <label id="zip_prompt" for='zip_prompt'>
-                Enter a zip code (must be within Oregon).
-            </label><br>
-            <input id='location' name="zip_input" type='text'>
-            <p id='error_msg'>Error: input cannot be left blank.</p>
-            <div id='next'><a id="next_button" onclick='return submitData()'>Submit</a></div>
-        </form>
+<section id="nav_bar_section">
+    <div>
+        <nav id="nav_bar">
+            <ul>
+                <li><a href='home.html'>SAFESTATE</a></li>
+                <li><a href='start.html'>CRIME DATA</a></li>
+                <li><a href='home.html#step1'>TUTORIAL</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
 
-        <section id='footer'>
-            <div>
-                <p>
-                    Have questions or comments? Email us at 
-                    <a id='email' href='mailto: help@safestate.com'>help@safestate.com</a> 
-                </p>
-            </div>
-        </section>
-    
+<form id="zip_form">
+    <label id="zip_prompt" for='zip_prompt'>Enter a zip code (must be within Oregon).</label><br>
+    <input id='location' name="zip_inpt" type='text'>
+    <p id="error_msg">Error: input cannot be left blank.</p>
+    <div id='next'><a id="next_button" onclick='return submitData()'>Submit</a></div>
+</form>
+
+<section id='footer'>
+    <div>
+        <p>
+            Have questions or comments? Email us at
+            <a id='email' href='mailto: help@safestate.com'>help@safestate.com</a>
+        </p>
+    </div>
+</section>
+
 </body>
 </html>
