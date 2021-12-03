@@ -7,7 +7,6 @@ const axios = require('axios');
 const mysql = require('mysql');
 const path = require('path');
 
-////CREATE DATABASE CONNECTION
 const conn = mysql.createConnection({
     host: 'localhost',
     user: 'new_user',
@@ -26,7 +25,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/stats/', function(req, res){
-    ////ACCEPT AND STORE INPUTS
     let context = {};
     const zipCode = req.query.zipcode;
 
@@ -46,9 +44,6 @@ app.get('/stats/', function(req, res){
                 }
                 else{
                     context['locationMeasure'] = zipCode;
-                    ////URL GETS CRIME DATA FOR MOTOR VEHICLE THEFTS, ROBBERIES, 
-                    ////WEAPON LAW VIOLATIONS, AND SIMPLE ASSAULTS GIVEN ZIP CODE
-                    ///RETURNS JSON OBJECT OF CRIME INCIDENTS BY MONTH FOR EACH CRIME CATEGORY
                     axios.get('http://localhost:2000/api/crimeincidents/?zipcode='+zipCode)
                     .then(response => {
                         let data = response.data;
@@ -56,7 +51,6 @@ app.get('/stats/', function(req, res){
                         context['robberies'] = data['Robbery'];
                         context['wlvs'] = data['Weapon Law Violations'];
                         context['assaults'] = data['Simple Assault'];
-            
                         context.mvTheftDates = Object.keys(data['Motor Vehicle Theft']);
                         context['mvTheftOffenses'] = Object.values(data['Motor Vehicle Theft']);
                         context['robberyDates'] = Object.keys(data['Robbery']);
@@ -230,7 +224,7 @@ app.get('/nearbyagencies', (req, res) => {
     });
 });
 
-// Handle errors
+// handle errors
 app.use(function(req, res){
     res.status(404);
     res.render('404');

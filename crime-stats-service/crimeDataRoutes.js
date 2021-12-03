@@ -18,18 +18,20 @@ const conn = mysql.createConnection({
 
 app.set('json spaces', 2);
 
-// set GET request for API - return crime rates by category of crime as JSON
-app.get('/api/crimerates/', (req, res) => {
+// crimerates API will return crime rates by category of crime as JSON
+app.get('/api/crimerates/', (req, res) =>
+  {
     const lat = req.query.lat; 
     const long = req.query.long;
     axios.get('https://geo.fcc.gov/api/census/area?lat='+lat+'&lon='+long+'&format=json')
-    .then(response => {
-      const countyName = response.data.results[0].county_name;
-      crimeService.getCrimes(countyName).then(crimesArr =>{
-        let crimeRates = {};
-        crimesArr.forEach(crimeDesc => {
-          crimeRates[crimeDesc] = 0;
-        });
+    .then(
+        response => {
+            const countyName = response.data.results[0].county_name;
+            crimeService.getCrimes(countyName).then(crimesArr =>{
+            let crimeRates = {};
+            crimesArr.forEach(crimeDesc => {
+                crimeRates[crimeDesc] = 0;
+            });
         crimeService.getOffensesWithCounty(countyName).then(result => {
           result.forEach(report => {
             crimeRates[report.nibrs_crime_desc] += report.distinct_offenses;
@@ -45,8 +47,12 @@ app.get('/api/crimerates/', (req, res) => {
     })
     .catch(err => console.error(err));
   });
-  
-  app.get('/api/incidents/', (req, res) => {
+
+
+// url gets crime data for motorvehicle thefts, robberies, weapon law violations, and simple
+// assaults given zip code
+// returns JSON object of crime incidents by month for each crime category
+app.get('/api/incidents/', (req, res) => {
     const zipCode = req.query.zipcode;
     crimeService.getCountiesFromZip(zipCode).then(result => (
       res.send(result)
@@ -56,21 +62,23 @@ app.get('/api/crimerates/', (req, res) => {
     const zipCode = req.query.zipcode;
     let countyName = '';
 
-    // will use "Motor Vehicle Theft", "Robbery", "Weapon Law Violations", "Simple Assault" for statistics
+    // will use "Motor Vehicle Theft", "Robbery", "Weapon Law Violations", "Simple Assault" for
+    // statistics
     // if zip is given:
     if (typeof zipCode != 'undefined'){
         let sql = 'SELECT county FROM zipcode_to_county WHERE zip='+zipCode;
         conn.query(sql, (err, results) => {
           if (err) throw err;
           countyName = results[0].county;
-        let sql = 'SELECT nibrs_crime_desc, incident_date, distinct_offenses FROM agency_raw_crime_data '+
-            'WHERE county = "'+countyName+
+        let sql = 'SELECT nibrs_crime_desc, incident_date, distinct_offenses FROM '+
+            'agency_raw_crime_data WHERE county = "'+countyName+
             '" AND (nibrs_crime_desc = "Motor Vehicle Theft" OR nibrs_crime_desc = "Robbery" OR '+
             'nibrs_crime_desc = "Weapon Law Violations" OR nibrs_crime_desc = "Simple Assault")';
       conn.query(sql, (err, results) => {
       let crime;
       if (err) throw err;
-      let data = {"Motor Vehicle Theft": [], "Robbery": [], "Weapon Law Violations": [], "Simple Assault": []};
+      let data = {"Motor Vehicle Theft": [], "Robbery": [], "Weapon Law Violations": [],
+        "Simple Assault": []};
       let dates = {};
       results.forEach(element => {
         let updated_date = new Date(element.incident_date.toString()).toLocaleDateString('en-US')
@@ -94,10 +102,12 @@ app.get('/api/crimerates/', (req, res) => {
             {"incident_date":element.incident_date, "distinct_offenses":element.distinct_offenses}
         );
       });
-      let modData = {'Motor Vehicle Theft': {}, 'Robbery': {}, 'Weapon Law Violations': {}, 'Simple Assault': {}};
+      let modData = {'Motor Vehicle Theft': {}, 'Robbery': {}, 'Weapon Law Violations': {},
+        'Simple Assault': {}};
       for (crime in data){
         data[crime].forEach(incident => {
-          let updated_date = new Date(incident.incident_date.toString()).toLocaleDateString('en-US')
+          let updated_date = new Date(incident.incident_date.toString())
+              .toLocaleDateString('en-US')
               .replace(/\//g, "-");
           let split_date = updated_date.split('-');
           if (split_date[0].length === 1){
@@ -116,16 +126,19 @@ app.get('/api/crimerates/', (req, res) => {
           }
         });
       }
-      let modData2 = {'Motor Vehicle Theft': {}, 'Robbery': {}, 'Weapon Law Violations': {}, 'Simple Assault': {}};
+      let modData2 = {'Motor Vehicle Theft': {}, 'Robbery': {}, 'Weapon Law Violations': {},
+        'Simple Assault': {}};
       for (crime in modData2){
         const datesArr = Object.keys(modData[crime]);
         const sortedDatesArr = datesArr.sort((a, b) => {
-          const aMonth = a.slice(0, 3); //gets month of a in 'MMM'
-          const bMonth = b.slice(0, 3); //gets month of b in 'MMM'
-          const aYear = '20' + a.slice(4, 6); //gets year of a in 'YY' and turns it into 'YYYY'
-          const bYear = '20' + b.slice(4, 6); //gets year of b in 'YY' and turns it into 'YYYY'
-          const modA = moment(aMonth + ' ' + aYear).format('MM YYYY'); //modified a: 'MM YY' becomes 'MM YYYY'
-          const modB = moment(bMonth + ' ' + bYear).format('MM YYYY'); //modified a: 'MM YY' becomes 'MM YYYY'
+          const aMonth = a.slice(0, 3); // gets month of a in 'MMM'
+          const bMonth = b.slice(0, 3); // gets month of b in 'MMM'
+          const aYear = '20' + a.slice(4, 6); // gets year of a in 'YY' and turns it into 'YYYY'
+          const bYear = '20' + b.slice(4, 6); // gets year of b in 'YY' and turns it into 'YYYY'
+          // modified a: 'MM YY' becomes 'MM YYYY'
+          const modA = moment(aMonth + ' ' + aYear).format('MM YYYY');
+          // modified b: 'MM YY' becomes 'MM YYYY'
+          const modB = moment(bMonth + ' ' + bYear).format('MM YYYY');
           const aMo = parseInt(modA.slice(0, 2));
           const bMo = parseInt(modB.slice(0, 2));
           const aYr = parseInt(modA.slice(3, 7));
@@ -148,7 +161,7 @@ app.get('/api/crimerates/', (req, res) => {
     
   });
 
-  //Handle errors 
+  // handle errors
   app.use(function(req, res){
     res.type('text/plain');
     res.status(404);

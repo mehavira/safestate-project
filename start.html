@@ -15,7 +15,8 @@
                 document.getElementById('error_msg').style.display = 'block';
                 return false;
             }
-            document.getElementById('next_button').href = 'http://localhost:3500/stats/?zipcode='+input;
+            document.getElementById('next_button')
+                .href = 'http://localhost:3500/stats/?zipcode='+input;
         }
     </script>
 
@@ -34,7 +35,9 @@
         </section>
         
         <form id='zip_form'>
-            <label id="zip_prompt" for='zip_prompt'>Enter a zip code (must be within Oregon).</label><br>
+            <label id="zip_prompt" for='zip_prompt'>
+                Enter a zip code (must be within Oregon).
+            </label><br>
             <input id='location' name="zip_input" type='text'>
             <p id='error_msg'>Error: input cannot be left blank.</p>
             <div id='next'><a id="next_button" onclick='return submitData()'>Submit</a></div>
