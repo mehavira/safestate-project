@@ -9,7 +9,7 @@
     "getstats": "node crime-stats-service/getStats.js",
     "crimeroutes": "node crime-stats-service/crimeDataRoutes.js",
     "httpserver": "python -m http.server 5500",
-    "start": "start npm run sightseeing && start npm run getstats && start npm run crimeroutes && start npm run httpserver"
+    "start": "npm run sightseeing && npm run getstats && npm run crimeroutes && npm run httpserver"
   },
   "repository": {
     "type": "git",
