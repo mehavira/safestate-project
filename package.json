@@ -25,10 +25,19 @@
   "dependencies": {
     "@heroku/buildpack-registry": "^1.0.1",
     "async-file": "^2.0.2",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
     "buildpack-registry": "^1.0.1",
     "cli-ux": "^5.6.5",
     "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.2",
     "got": "^11.8.3",
+    "handlebars": "^4.7.7",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
     "phoenix": "^1.6.2"
   }
 }
