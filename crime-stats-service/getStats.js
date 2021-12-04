@@ -238,6 +238,6 @@ app.use(function(err, req, res){
 });
 
 const port = process.env.PORT || 3500;
-app.listen(port,() =>{
+app.listen(port, '0.0.0.0', () =>{
     console.log(`Server started on port ${port}...`);
 });

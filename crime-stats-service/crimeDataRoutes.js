@@ -171,6 +171,6 @@ app.get('/api/incidents/', (req, res) => {
   });
   
 const port = process.env.PORT || 2000;
-app.listen(port,() =>{
+app.listen(port, '0.0.0.0', () =>{
   console.log(`Server started on port ${port}...`);
 });
