@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/mehavira/safestate-project/issues"
   },
-  "homepage": "https://github.com/mehavira/safestate-project#readme",
+  "homepage": "https://github.com/mehavira/safestate-project/blob/main/home.html",
   "dependencies": {
     "@heroku/buildpack-registry": "^1.0.1",
     "async-file": "^2.0.2",
