@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mehavira/safestate-project/issues"
   },
-  "homepage": "https://github.com/mehavira/safestate-project#readme"
+  "homepage": "https://github.com/mehavira/safestate-project#readme",
+  "dependencies": {
+    "buildpack-registry": "^1.0.1"
+  }
 }
