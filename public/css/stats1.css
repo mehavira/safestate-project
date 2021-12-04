@@ -32,7 +32,7 @@ canvas {
 
 #maps_button a {
     font-family: 'Roboto', sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     cursor: pointer;
     display: inline-block;
     padding: 0.35em 1.2em;
@@ -41,7 +41,6 @@ canvas {
     text-decoration: none;
     font-weight:300;
     color:black;
-    text-align:center;
     transition: all 0.2s;
     border-radius: 25px;
     margin: 0 0.3em 0.3em 5vh;
@@ -53,6 +52,9 @@ canvas {
 
 }
 
+#maps_button {
+    margin-right: 5vh;
+}
 
 #footer {
     background-color: rgb(15, 15, 15);

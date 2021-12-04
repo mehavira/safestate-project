@@ -143,11 +143,7 @@ app.get('/api/incidents/', (req, res) => {
           const bMo = parseInt(modB.slice(0, 2));
           const aYr = parseInt(modA.slice(3, 7));
           const bYr = parseInt(modB.slice(3, 7));
-          if (aYr === bYr) {
-            return aMo - bMo;
-          } else if (aYr !== bYr) {
-            return aYr - bYr;
-          }
+          if (aYr === bYr) {return aMo - bMo} else {return aYr - bYr}
         });
         sortedDatesArr.forEach(date => {
           modData2[crime][date] = modData[crime][date];

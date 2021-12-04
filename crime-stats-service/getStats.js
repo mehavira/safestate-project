@@ -85,7 +85,7 @@ app.get('/stats/', function(req, res){
                                         context.sightsResults = [
                                             'We could not find information for '+
                                             'the zip code you entered.', 
-                                            'Click the link below to view places to'+
+                                            'Click the button below to view places to'+
                                             ' visit on Google Maps.'];
                                         context.sightsLink = 'https://www.google.com/maps/'+
                                         'search/tourist+attractions+near+'+zipCode;
@@ -113,8 +113,8 @@ app.get('/stats/', function(req, res){
 });
 
 app.get('/getsights/', (req, res) => {
-    // converting the input to a number
     const input = req.query.input;
+    // converting the input to a number
     let modInput = parseFloat(input);
     let context = {};
     if (isNaN(modInput) || !Number.isInteger(modInput) || modInput < 0){

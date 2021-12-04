@@ -43,38 +43,5 @@ function getCountiesFromZip(zipCode){
     })
 }
 
-function getIncidentsFromCounty(countyName){
-    let sql = 'SELECT nibrs_crime_desc, incident_date, distinct_offenses FROM '+
-    'agency_raw_crime_data WHERE county = "'+countyName+'" AND '+
-    '(nibrs_crime_desc = "Motor Vehicle Theft" OR nibrs_crime_desc = "Robbery" OR '+
-    'nibrs_crime_desc = "Weapon Law Violations" OR nibrs_crime_desc = "Simple Assault")';
-    return base.mysqlBaseQuery(sql, (result) => {
-        let data = {"Motor Vehicle Theft": [], "Robbery": [], "Weapon Law Violations": [],
-            "Simple Assault": []};
-        let dates = {};
-        result.forEach(element => {
-            let updatedDate = new Date(element.incident_date.toString())
-                .toLocaleDateString('en-US').replace(/\//g, "-");
-            let splitDate = updatedDate.split('-');
-            if (splitDate[0].length === 1){
-            splitDate[0] = '0'+splitDate[0];
-          }
-          if (splitDate[1].length === 1){
-            splitDate[1] = '0'+splitDate[1];
-          }
-          updatedDate = splitDate[0]+'-'+splitDate[1]+'-'+splitDate[2];
-          if (!moment(updatedDate).format('MMM YY') in dates){
-            dates[moment(updatedDate).format('MMM YY')] = element.distinct_offenses;
-          }
-          else {dates[moment(updatedDate).format('MMM YY')] += element.distinct_offenses}
-          data[element.nibrs_crime_desc]
-              .push({"incident_date":element.incident_date,
-                  "distinct_offenses":element.distinct_offenses});
-        });
-        return data;
-    })
-}
-
-
 module.exports = {getCrimes, getOffensesWithCounty, getPopFromCounty, 
-                getCountiesFromZip, getIncidentsFromCounty}
+                getCountiesFromZip}
