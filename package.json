@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently 'node sightseeing-main/sight-server/server.js' 'node crime-stats-service/getStats.js' 'n\node crime-stats-service/crimeDataRoutes.js' 'python -m http.server 5500'\n"
+    "sightseeing": "node sightseeing-main/sight-server/server.js",
+    "getstats": "node crime-stats-service/getStats.js",
+    "crimeroutes": "node crime-stats-service/crimeDataRoutes.js",
+    "httpserver": "python -m http.server 5500",
+    "start": "start npm run sightseeing && start npm run getstats && start npm run crimeroutes && start npm run httpserver"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,7 @@
     "async-file": "^2.0.2",
     "buildpack-registry": "^1.0.1",
     "cli-ux": "^5.6.5",
+    "concurrently": "^6.4.0",
     "got": "^11.8.3",
     "phoenix": "^1.6.2"
   }
