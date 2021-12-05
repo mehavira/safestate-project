@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height: auto;
+    max-width: 100%;
+}
+
+/*style nav bar start*/
+li {
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 3vh;
+    margin: 3vh 2vw 0;
+}
+
+li a{
+    text-decoration: none;
+    padding: 0.2vw;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    color: white;
+}
+
+nav {
+    width: 100vw;
+    
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+/*style nav bar end*/
+
+#down_arrow {
+    color: white;
+    font-size: 5vh;
+    text-align: center;
+}
+
+#web_app_desc {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+
+#web_app_name {
+    display:none;
+}
+
+#web_app_name, #title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 90px;
+    text-decoration: none;
+}
+
+#example_stats {
+    border-radius: 25px;
+    float: right;
+    width: 50%;
+}
+
+#title, #title_desc {
+    text-align: left;
+    margin-bottom: 3px;
+    color: white;
+    margin-right: 5vh;
+
+}
+
+#title_desc {
+    margin-left: 5vh;
+}
+
+#web_title {
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.top_portion {
+    background-color: rgb(15, 15, 15);
+    height: 100vh;
+}
+#web_app_desc {
+    margin-top: 90px;
+}
+
+#start_button {
+    margin-top:100px;
+}
+
+#start_button a, #tutorial_button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #409fbf;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight:300;
+    color:white;
+    text-align:center;
+    transition: all 0.2s;
+    border-radius: 25px;
+    margin: 0 0.3em 0.3em 5vh;
+}
+
+#start_button a:hover, #tutorial_button a:hover {
+    color:white;
+    background-color: #409fbf;
+
+}
+
+.step1_img {
+    float:right;
+}
+
+.step_title, img {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    padding: 0;
+    margin-left: 5vh;
+}
+
+#footer {
+    background-color: rgb(15, 15, 15);
+}
+
+#footer * {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 8vh;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#footer div{
+    padding: 3px 0;
+}
