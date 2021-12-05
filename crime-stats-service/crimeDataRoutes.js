@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const mysql = require('mysql');
 const crimeService = require('./services/crimeService');
+const path = require('path');
 
 // parse application/json
 app.use(bodyParser.json());
