@@ -18,6 +18,18 @@ const conn = mysql.createConnection({
 
 app.set('json spaces', 2);
 
+app.get('/', (req, res, next) => {
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      name: 'safestate',
+      version: '0.1.0'
+    }
+  });
+
+});
+
 // crimerates API will return crime rates by category of crime as JSON
 app.get('/api/crimerates/', (req, res) =>
   {
@@ -169,7 +181,7 @@ app.get('/api/incidents/', (req, res) => {
     res.status(500);
     res.send('500 - Server Error');
   });
-  
+
 const port = process.env.PORT || 2000;
 app.listen(port, '0.0.0.0', () =>{
   console.log(`Server started on port ${port}...`);
