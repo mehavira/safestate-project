@@ -18,7 +18,7 @@ const conn = mysql.createConnection({
 
 app.set('json spaces', 2);
 
-app.use(express.static('frontend'))
+app.use('/', express.static('frontend'));
 
 // crimerates API will return crime rates by category of crime as JSON
 app.get('/api/crimerates/', (req, res) =>
